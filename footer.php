@@ -12,7 +12,7 @@
       <div class="box">
          <h3>extra links</h3>
          <a href="register.php">register</a>
-         <a href="login.php">login</a>
+         <a href="index.php">login</a>
          <a href="logout.php">logout</a>
       </div>
 

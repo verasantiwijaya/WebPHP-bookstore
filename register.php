@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
       }else{
          mysqli_query($conn, "INSERT INTO `users`(name, email, password, user_type) VALUES('$name', '$email', '$cpass', '$user_type')") or die('query failed');
          $message[] = 'registered successfully!';
-         header('location:login.php');
+         header('location:index.php');
       }
    }
 
@@ -74,7 +74,7 @@ if(isset($message)){
          </select>
 
          <input type="submit" name="submit" value="Register Now" class="btnregis">
-         <p>Already have an account? <a href="login.php">Sign in</a></p>
+         <p>Already have an account? <a href="index.php">Sign in</a></p>
       </form>
 </div>
 

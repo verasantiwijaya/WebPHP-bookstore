@@ -22,3 +22,14 @@ window.onscroll = () =>{
       document.querySelector('.header .header-2').classList.remove('active');
    }
 }
+
+$(document).ready(function() {
+   $('#searchForm').submit(function(e) {
+     e.preventDefault(); // Menghentikan form dari pengiriman default
+     var searchTerm = $('#searchInput').val(); // Mengambil nilai dari input pencarian
+     if (searchTerm) {
+       window.location.href = 'search_page?search=' + encodeURIComponent(searchTerm); // Navigasi ke halaman pencarian dengan query string
+     }
+   });
+ });
+ 

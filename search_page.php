@@ -50,27 +50,22 @@ if(isset($_POST['add_to_cart'])){
 <?php include 'header.php'; ?>
 
 <div class="heading">
-   <h3>search page</h3>
+   <h3><span class="firsttxt">Search</span> <span class="secondtxt">Page</span></h3>
    <p> <a href="home.php">home</a> / search </p>
+   <hr>
 </div>
-
-<section class="search-form">
-   <form action="" method="post">
-      <input type="text" name="search" placeholder="search products..." class="box">
-      <input type="submit" name="submit" value="search" class="btn">
-   </form>
-</section>
 
 <section class="products" style="padding-top: 0;">
 
    <div class="box-container">
    <?php
-      if(isset($_POST['submit'])){
-         $search_item = $_POST['search'];
-         $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE name LIKE '%{$search_item}%'") or die('query failed');
-         if(mysqli_num_rows($select_products) > 0){
-         while($fetch_product = mysqli_fetch_assoc($select_products)){
-   ?>
+    if(isset($_GET['search'])){
+        $search_item = $_GET['search'];
+        $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE name LIKE '%{$search_item}%'") or die('query failed');
+        if(mysqli_num_rows($select_products) > 0){
+            while($fetch_product = mysqli_fetch_assoc($select_products)){
+    ?>
+
    <form action="" method="post" class="box">
       <img src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="" class="image">
       <div class="name"><?php echo $fetch_product['name']; ?></div>

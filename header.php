@@ -16,9 +16,9 @@ if(isset($message)){
    <div class="header-1">
       <div class="flex">
          <section class="search-form">
-               <form action="" method="post">
-                  <input type="text" name="search" placeholder="search products..." class="box">
-                  <button type="submit" name="search" class="btnsrc"><i class="fas fa-search"></i></button>
+               <form id="searchForm" action="search_page.php" method="GET">
+                  <input type="text" name="search" id="searchInput" placeholder="Type here..." class="box">
+                  <button type="submit" class="btnsrc"><i class="fas fa-search"></i></button>
                </form>
          </section>
       </div>
